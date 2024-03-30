@@ -1,23 +1,55 @@
 import java.util.Scanner;
+import java.util.SplittableRandom;
+import java.util.ArrayList;
+
 public class Main {
+
 
     public static void main(String[] args) {
 
-        /*
-        movieshow movie1 = new movieshow(1, "东八区的先生们", "2022", 2.1, "中国大陆", "剧情 喜剧", "夏睿", "张翰 王晓晨");
-            movieshow movie2 = new movieshow(2, "上海堡垒", "2019", 2.9, "中国大陆", "爱情 战争 科幻",  "滕华涛", "鹿晗 舒淇");
-            movieshow movie3 = new movieshow(3, "纯洁心灵·逐梦演艺圈", "2015", 2.2, "中国大陆", "剧情 喜剧",  "毕志飞", "朱一文 李彦漫");
-            movieshow []arr={movie1,movie2,movie3};
-        movieServe movieServe=new movieServe(arr);
-        movieServe.start();
-        */
-        Scanner sc =new Scanner(System.in);
-       int name= sc.nextInt();
-       System.out.println(name);
+   ArrayList<Student> students = new ArrayList<>();
+       Scanner sc = new Scanner(System.in);
+      for (int i = 0; i < 4; i++) {
+            addstudent(students);
+      }
+   ArrayList<Student> result=   shaixuanstudent(students);
+      for (int i = 0; i < result.size(); i++) {
+          System.out.println(result.get(i).getName());
+      }
+      for (int i = 0; i < students.size(); i++) {
+          System.out.println(students.get(i).getName());
+      }
+
+
+
+
+
+
 
     }
 
+    public static void addstudent(ArrayList<Student> students) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("请输入学生名字");
+        String name = sc.next();
+        System.out.println("请输入学生年龄：");
+        int age = sc.nextInt();
+        Student stu =new Student(age,name);
+        students.add(stu);
     }
+   public static ArrayList<Student> shaixuanstudent(ArrayList<Student> students) {
+        ArrayList<Student> result = new ArrayList<Student>();
+        Student stu = new Student(0,"null");
+        for (int i = 0; i < students.size(); i++) {
+            if (students.get(i).getAge() <=18) {
+                  stu=  students.remove(i);
+                i--;
+                result.add(stu);
+            }
+        }
+        return result;
+   }
+}
 
 
 
