@@ -2,6 +2,8 @@ package window;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class window {
     public static void main(String[] args) {
@@ -23,6 +25,13 @@ public class window {
          JButton jbut=new JButton("开始游戏");
          //设置按钮位置，长宽
         jbut.setBounds(100,100,300,100);
+        //增加事件
+        jbut.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("我被点了");
+            }
+        });
         //加载按钮组件
         container.add(jbut);
 
