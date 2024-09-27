@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.Socket;
+import java.nio.charset.StandardCharsets;
 
 public class server {
      public static void main(String[] args)throws Exception {
@@ -14,7 +15,7 @@ public class server {
     byte[] buf = new byte[1024];
     int len0 = is.read(buf);
 
-         System.out.println(new String(buf,len0));
+         System.out.println(new String(buf,0,len0));
     socket.close();
      }
 }

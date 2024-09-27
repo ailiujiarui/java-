@@ -14,6 +14,7 @@ public class client {
         buf = packet.getData();
         String msg=new String(buf,0,packet.getLength());
         System.out.println(msg);
+
         if(msg.equals("exit")){
             break;
         }

@@ -4,6 +4,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.nio.charset.StandardCharsets;
 
 public class client {
     public static void main(String[] args)throws Exception {
@@ -16,9 +17,9 @@ public class client {
         String ip = socket.getInetAddress().getHostAddress();
 
 
-        System.out.println("接收到"+ip+"的消息"+new String(bytes,size));
+        System.out.println("接收到"+ip+"的消息"+new String(bytes,0,size));
         //回复消息
-        outputStream.write("baby".getBytes());
+        outputStream.write("baby".getBytes(StandardCharsets.UTF_8));
         socket.close();
 
 
