@@ -1,3 +1,4 @@
+/*
 package shejimoshi;
 
 public class muban {
@@ -21,4 +22,4 @@ class 小学生 extends 写作文 {
     public void act(){
         System.out.println("小鸭子被做成烤鸭");
     }
-}
+}*/
