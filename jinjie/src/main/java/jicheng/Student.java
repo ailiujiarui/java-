@@ -1,6 +1,8 @@
 package jicheng;
 
-public class Student extends Person implements Comparable<Student>{
+import java.io.Serializable;
+
+public class Student extends Person implements Comparable<Student>, Serializable {
     private double score;
     public Student() {
     }
